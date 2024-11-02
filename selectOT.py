@@ -129,10 +129,10 @@ class Select(Base):
         for k, v in passdic4.items():
             self.resultlist5[k] = self.method5(self.Aplist[k], self.Aflist[k])
 
-        # print('af', self.Aflist, 'ap', self.Aplist)
-        # for k, v in self.halfthetadic.items():
-        #     print(k, v / math.pi * 180)
-        
+        print('af', self.Aflist, 'ap', self.Aplist)
+        for k, v in self.halfthetadic.items():
+            print(k, v / math.pi * 180)
+        # print(self.halfthetadic)
 
         return self.resultlist5
 
@@ -143,4 +143,5 @@ class Select(Base):
 # x = Select(1.03, 260, 260, 40, 263, 1.19, 6.9, 0.015, 1.77, 8, 0.33, 10, 5, 1.2, 1, (0.75, 0.85), 5)
 x = Select(1.03, 265, 260, 40, 263, 1.19, 6.9, 0.015, 1.77, 8, 0.33, 8, 8, 1.2, 1, (0.75, 0.85), 5)
 print(x.slove5())
+print(x.halfthetadic)
 
