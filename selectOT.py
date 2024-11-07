@@ -6,9 +6,27 @@ halfThetabaDeg = [24.55, 28.22, 31.13, 33.53, 35.56, 37.31]
 halfThetabaRad = [i/180 * math.pi for i in halfThetabaDeg]
 
 class Select(Base):
+    """
+    药柱筛选
+    Id 计算装药量时I的偏差值系数，取值1.01~1.05
+    D 外径(mm)
+    I 总冲(kNs)
+    Fbar 平均推力(kN)
+    Isp 理论比冲(s)
+    k 燃气绝热指数
+    pc 工作压力(Mpa)
+    rco 过度圆弧半径系数
+    rhop 推进剂密度(g/cm3)
+    rran 燃速
+    n 压力指数
+    r1 星角圆弧半径(mm试取)
+    pa = 101325
+    g = 9.8
+    stand1/2/3/4 筛选标准
+    """
     def __init__(self, Id : float, D : float, I : float, Fbar : float, Isp : float, 
                  k : float, pc : float, rco : float, rhop : float, rran :float, n :float, r1, 
-                 nstar : int, stand1, stand2, stand3, stand4,
+                 nstar : int, stand1:float, stand2:float, stand3:tuple, stand4:float,
                  pa : float = 101325, g : float = 9.8) -> None:
         Base.__init__(self, Id, D, I, Fbar, Isp, k, pc, rco, rhop, rran, n, r1, pa, g)
         self.nstar = nstar
@@ -138,10 +156,8 @@ class Select(Base):
 
         
         
-# y = Base(1.03, 255, 260, 40, 263, 1.19, 6.9, 0.015, 1.77, 8, 0.33)
-# x = Select(1.01, 270, 270, 39, 262.5, 1.19, 6.9, 0.02, 1.77, 8, 0.33, 10, 4, 1.2, 0.85, (0.75, 0.85), 5)
-# x = Select(1.03, 260, 260, 40, 263, 1.19, 6.9, 0.015, 1.77, 8, 0.33, 10, 5, 1.2, 1, (0.75, 0.85), 5)
-x = Select(1.03, 265, 260, 40, 263, 1.19, 6.9, 0.015, 1.77, 8, 0.33, 8, 8, 1.2, 1, (0.75, 0.85), 5)
-print(x.slove5())
-print(x.halfthetadic)
+
+# x = Select(1.03, 265, 260, 40, 263, 1.19, 6.9, 0.015, 1.77, 8, 0.33, 8, 8, 1.2, 1, (0.75, 0.85), 5)
+# print(x.slove5())
+# print(x.halfthetadic)
 

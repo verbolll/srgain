@@ -5,6 +5,16 @@ plt.rcParams['font.family'] = 'SimSun'
 plt.rcParams['axes.unicode_minus'] = False
 
 class drawAb:
+    """
+    画燃面Ab与时间的图
+    number:序号
+    n:星角数
+    r:过渡圆弧半径
+    r1 星角圆弧半径(mm试取)
+    l:特征长度
+    ystar:星边消失点无量纲燃层厚度
+    L:装药长度
+    """
     def __init__(self) -> None:
         pass
         self.fig, self.ax = plt.subplots() 
@@ -31,6 +41,15 @@ class drawAb:
 
 
     def drawallpiv(self, number, n, varepsilon, theta, r, r1, l, ystar, L):
+        """
+        number:序号
+        n:星角数
+        r:过渡圆弧半径
+        r1 星角圆弧半径(mm试取)
+        l:特征长度
+        ystar:星边消失点无量纲燃层厚度
+        L:装药长度
+        """
         t = 0
         elist = []
         solvelist = []

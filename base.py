@@ -2,6 +2,7 @@ import math
 
 class Base:
     """
+    计算基础数据
     Id 计算装药量时I的偏差值系数，取值1.01~1.05
     D 外径(mm)
     I 总冲(kNs)
