@@ -70,7 +70,7 @@ class drawAb:
         plt.xlabel('e', fontsize=14)
         plt.show()
 
-    def picsave(self, name, xmin = None, xmax = None, ymin = None, ymax = None):
+    def picshow(self, name, xmin = None, xmax = None, ymin = None, ymax = None):
         self.ax.legend( fontsize=14)
         if xmin != None or ymin != None or xmax != None or ymax != None:
             self.ax.set_xlim(xmin, xmax)
